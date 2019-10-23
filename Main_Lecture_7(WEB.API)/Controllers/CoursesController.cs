@@ -65,21 +65,23 @@ namespace Web.Api.Demo.Controllers
             return "ok";
         }
 
-
         //SetStudentsToCourse
         [HttpPost]
-        public Course SetStudentsToCourse([FromRoute] int courseId, IEnumerable<int> studentsId)
+        [Route("Courses/SetStudentsToCourse/{courseId}")]
+        public Course SetStudentsToCourse([FromRoute] int courseId, [FromBody] IEnumerable<int> studentsId)
         {
             _repository.SetStudentsToCourse(courseId, studentsId);
             var course = _repository.GetCourse(courseId);
             return course;
         }
 
+
         //GetStudentsByCourseId
         [HttpGet]
-        public ActionResult<List<Student>> GetStudentsByCourseId([FromRoute] int courseId)
+        [Route("Courses/GetStudentsByCourseId/{courseId}")]
+        public ActionResult<List<Student>> GetStudentsByCourseId(int courseId)
         {
-            var students = _repository.GetStudentsByCourseId(courseId);
+            List<Student> students = _repository.GetStudentsByCourseId(courseId);
             return students;
         }
 
