@@ -33,6 +33,7 @@ namespace Web.Api.Demo.Controllers
         {
             var student = _repository.GetStudentById(id);
 
+
             if (student == null)
             {
                 return NotFound();
