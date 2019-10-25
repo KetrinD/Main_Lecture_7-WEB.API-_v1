@@ -90,19 +90,13 @@ namespace Web.Api.Demo.Controllers
 
 
 
-////UpdateStudentsInCourse
-//[HttpPut]
-//public Course UpdateStudentsInCourse(int courseId, IEnumerable<int> studentsId)
-//{
-//    var student = _repository.GetStudentById(studentsId);
-//}
-
-
 ////DeleteStudentsFromCourse
-//[HttpPost]
+//[HttpDelete]
+//[Route("Courses/DeleteStudentsFromCourse/{courseId}")]
 //public Course DeleteStudentsFromCourse([FromRoute] int courseId, IEnumerable<int> studentsId)
 //{
-//    _repository.remo
+//    _repository.DeleteStudentsFromCourse(courseId, studentsId);
 //    var course = _repository.GetCourse(courseId);
 //    return course;
 //}
+

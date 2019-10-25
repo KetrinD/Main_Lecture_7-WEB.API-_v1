@@ -170,7 +170,9 @@ INSERT INTO [dbo].[HomeTaskAssessment]
             }
         }
 
-        public void DeleteCourse(int courseId)
+
+               
+            public void DeleteCourse(int courseId)
         {
             using (SqlConnection connection = GetConnection())
             {
@@ -868,3 +870,22 @@ SELECT CAST(scope_identity() AS int)
         }
     }
 }
+
+
+
+
+
+//public void DeleteStudentsFromCourse(int courseId, IEnumerable<int> studentsId)
+//{
+//    using (SqlConnection connection = GetConnection())
+//    {
+
+//        foreach (var studentId in studentsId)
+//        {
+//            SqlCommand sqlCommand = new SqlCommand(
+//                $@"DELETE FROM [dbo].[StudentCourse]
+//            WHERE CourseId = {courseId}", connection);
+//            sqlCommand.ExecuteNonQuery();
+//        }
+//    }
+//}
